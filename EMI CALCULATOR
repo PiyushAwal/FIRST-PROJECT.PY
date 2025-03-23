@@ -1,0 +1,61 @@
+print("********WELCOME TO PIYUSH FINANCE LTD*********")
+cibil=int(input("Enter your cibil score"))
+if cibil>=700:
+    package=int(input("Enter the Package per Annum"))
+    A=package*0.5
+    print("Your cibil score is good you can proceed for the loan")
+    print("*******SELECT LOAN********")
+    print("1.HOME LOAN")
+    print("2.CAR LOAN")
+    print("3.GOLD LOAN")
+    print("4.PERSONAL LOAN")
+    type = int(input("Select option acoording to above"))
+    P=int(input("Enter the amount"))
+    YEAR=int(input("Enter the year"))
+    def select(option):
+        if option==1:
+            print("HOME LOAN")
+            INTEREST=P*12*YEAR/100
+            TOTAL_LOAN = INTEREST + P
+            print("HOME LOAN=",INTEREST)
+            print("TOTAL LOAN:", TOTAL_LOAN)
+        elif option==2:
+            print("CAR LOAN")
+            INTEREST = P * 13 * YEAR / 100
+            TOTAL_LOAN = INTEREST + P
+            print("CAR LOAN=", INTEREST)
+            print("TOTAL LOAN:", TOTAL_LOAN)
+        elif option==3:
+            print("GOLD LOAN")
+            INTEREST = P * 10 * YEAR / 100
+            TOTAL_LOAN = INTEREST + P
+            print("GOLD LOAN=", INTEREST)
+            print("TOTAL LOAN:", TOTAL_LOAN)
+        elif option==4:
+            print("PERSONAL LOAN")
+            INTEREST = P * 14 * YEAR / 100
+            TOTAL_LOAN = INTEREST + P
+            print("PERSONAL LOAN=", INTEREST)
+            print("TOTAL LOAN:",TOTAL_LOAN)
+        else:
+            print("Please rnter the valid option")
+        if package >= INTEREST:
+            print("Eligible for the loan")
+        else:
+            print("Not eligible for the loan")
+    select(type)
+
+    print("*******************************************")
+    I=float(input("Enter the interest for EMI CALCULATION:"))
+    R=I/12/100
+    n=YEAR*12
+    EMI=P*R*(1+R)**n/((1+R)**n-1)
+    Total_Amount=EMI*n
+    print("EMI:",EMI)
+    Total_Interest=Total_Amount-P
+    print("Total Amount:",Total_Amount)
+    print("Principle Amount:",P)
+    print("Total Interest:",Total_Interest)
+    print("Tenuar:",n,"month")
+else:
+    print("Sorry your cibil score is not good and you not eligible for the loan")
