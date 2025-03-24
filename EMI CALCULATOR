@@ -59,3 +59,93 @@ if cibil>=700:
     print("Tenuar:",n,"month")
 else:
     print("Sorry your cibil score is not good and you not eligible for the loan")
+======================================================================================
+print("********WELCOME TO PIYUSH FINANCE LTD*********")
+cibil=int(input("Enter your cibil score"))
+if cibil>=700:#if the cibil score is greater than the 700 then applicable
+    package=int(input("Enter the Package per Annum"))
+    A=package*0.5#half of the package
+    print("Your cibil score is good you can proceed for the loan")
+    print("****************SELECT LOAN***************")
+    print("1.HOME LOAN")
+    print("2.CAR LOAN")
+    print("3.GOLD LOAN")
+    print("4.PERSONAL LOAN")#select the loan type and press the number as above
+    print("******************************************")#select the option any one and press the key as no.
+    type = int(input("Select option acoording to above"))
+    P=int(input("Enter the amount"))#same amount for the EMI calculation also
+    YEAR=int(input("Enter the year"))#same year for the EMI calculation also
+    def select(option):
+        if option==1:
+            print("HOME LOAN")
+            INTEREST=P*12*YEAR/100
+            TOTAL_LOAN = INTEREST + P
+            print("HOME LOAN=",INTEREST)
+            print("TOTAL LOAN:", TOTAL_LOAN)
+        elif option==2:
+            print("CAR LOAN")
+            INTEREST = P * 13 * YEAR / 100
+            TOTAL_LOAN = INTEREST + P
+            print("CAR LOAN=", INTEREST)
+            print("TOTAL LOAN:", TOTAL_LOAN)
+        elif option==3:
+            print("GOLD LOAN")
+            INTEREST = P * 10 * YEAR / 100
+            TOTAL_LOAN = INTEREST + P
+            print("GOLD LOAN=", INTEREST)
+            print("TOTAL LOAN:", TOTAL_LOAN)
+        elif option==4:
+            print("PERSONAL LOAN")
+            INTEREST = P * 14 * YEAR / 100
+            TOTAL_LOAN = INTEREST + P
+            print("PERSONAL LOAN=", INTEREST)
+            print("TOTAL LOAN:",TOTAL_LOAN)
+        else:
+            print("Please rnter the valid option")
+        if A >= INTEREST:
+            print("Eligible for the loan")
+        else:
+            print("Not eligible for the loan")
+    select(type)
+
+    print("*******************************************")
+    I=float(input("Enter the interest for EMI CALCULATION:"))
+    R=I/12/100
+    n=YEAR*12
+    EMI=P*R*(1+R)**n/((1+R)**n-1)
+    Total_Amount=EMI*n
+    print("EMI:",EMI)
+    Total_Interest=Total_Amount-P
+    print("Total Amount:",Total_Amount)
+    print("Principle Amount:",P)
+    print("Total Interest:",Total_Interest)
+    print("Tenuar:",n,"month")
+else:
+    print("Sorry your cibil score is not good and you not eligible for the loan")
+
+OUTPUT:
+********WELCOME TO PIYUSH FINANCE LTD*********
+Enter your cibil score>? 750
+Enter the Package per Annum>? 2000000
+Your cibil score is good you can proceed for the loan
+****************SELECT LOAN***************
+1.HOME LOAN
+2.CAR LOAN
+3.GOLD LOAN
+4.PERSONAL LOAN
+******************************************
+Select option acoording to above>? 4
+Enter the amount>? 500000
+Enter the year>? 5
+PERSONAL LOAN
+PERSONAL LOAN= 350000.0
+TOTAL LOAN: 850000.0
+Eligible for the loan
+*******************************************
+Enter the interest for EMI CALCULATION:>? 10
+EMI: 10623.522355634166
+Total Amount: 637411.34133805
+Principle Amount: 500000
+Total Interest: 137411.34133804997
+Tenuar: 60 month
+
